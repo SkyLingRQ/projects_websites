@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffe | Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url("images/bg-login-register.jpeg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            font-family: "Lobster Two", sans-serif;
+        }
+
+        .wrapper {
+            margin-top: 10%;
+            padding: 3rem 5rem 5rem 5rem;
+            background-color: transparent;
+            position: relative;
+            border-radius: 0.5rem;
+            border: 2px solid rgba(255, 255, 255, .4);
+            backdrop-filter: blur(0.3rem);
+        }
+
+        form > input {
+            display: flex;
+            padding: 0.8rem;
+            width: 20rem;
+            border-radius: 1rem;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            border: 2px solid rgba(255, 255, 255, .2);
+
+        }
+
+        form > h1 {
+            text-align: center;
+            color: white;
+        }
+
+        form > i {
+            color: rgb(255, 255, 255);
+            position: absolute;
+            transform: translate(17.6rem, -3rem);
+
+        }
+
+        #iconEye {
+            cursor: pointer;
+        }
+
+        form > button {
+            font-family: "Lobster Two", sans-serif;
+            font-size: large;
+            color: white;
+            cursor: pointer;
+            background-color: #63452c;
+            border-radius: 1rem;
+            border: none;
+            padding: 0.7rem;
+            margin-left: 5rem;
+            width: 10rem;
+            transition: background-color 0.3s ease;
+        }
+
+        form > button:hover {
+            background-color: #967138;
+        }
+
+        form > a {
+            text-decoration: none;
+            color: #D6B98C;
+            font-size: 1.3rem;
+        }
+
+        form > a:hover{
+            color: #8a714b;
+            text-decoration: underline;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="wrapper">
+        <form action="">
+            <h1>Iniciar Sesión</h1>
+            <input type="email" name="emailInput" id="emailInput" placeholder="Email" required>
+            <br>
+            <i class="fa fa-envelope"></i>
+            <input type="password" name="inputPassword" id="inputPassword" placeholder="Contraseña" required>
+            <br>
+            <i class="fa fa-eye" id="iconEye"></i>
+            <br>
+            <button>Iniciar Sesión</button>
+            <br>
+            <br>
+            <a href="#"><b>Don't you have an account? Register.</b></a>
+        </form>
+    </div>
+
+    <script>
+        const iconEye = document.querySelector("#iconEye");
+        const inputPasswd = document.querySelector("#inputPassword");
+
+        iconEye.addEventListener("click", () => {
+            if (iconEye.classList.contains("fa-eye")) {
+                iconEye.classList.replace("fa-eye", "fa-eye-slash");
+                inputPasswd.type = "text";
+            }
+            else {
+                iconEye.classList.replace("fa-eye-slash", "fa-eye");
+                inputPasswd.type = "password";
+            }
+        });
+
+
+    </script>
+
+</body>
+</html>

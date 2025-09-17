@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffe Shop</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        .menu-principal {
+            position: relative;
+            top: 0;
+            margin-top: 0;
+            background-image: url("images/bgImage.png");
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+
+        .menu-principal > div {
+            padding: 0.7rem;
+            background-color: rgba(45, 31, 13, 0.7);
+        }
+
+        .menu-principal ul{
+            display: flex;
+            gap: 3em;
+            justify-content: end;
+            list-style: none;
+            margin-right: 3rem;
+        }
+
+        .menu-principal ul li a {
+            padding: 0.8rem;
+            border-radius: 3rem;
+            text-decoration: none;
+            color: rgb(206, 206, 206);
+            transition: background 0.4s ease-in-out;
+        }
+
+        .menu-principal > h1, p {
+            margin-left: 1.5rem;
+            color: rgb(255, 255, 255);
+        }
+
+        .menu-principal > h1 {
+            font-size: 3rem;
+            font-family: "Lobster Two", sans-serif;
+        }
+
+        .menu-principal > p {
+            font-size: 1.5rem;
+            text-align: justify;
+            font-family: "DM Serif Text", serif;
+        }
+
+        #orderNow {
+            text-decoration: none;
+            color: #FFD8A9;
+            margin-left: 3rem;
+            background-color: rgb(58, 40, 17);
+            padding: 1rem;
+            border-radius: 15rem;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #contactUs {
+            background-color: transparent;
+            text-decoration: none;
+            color: rgb(206, 206, 206);
+            margin-left: 2.2rem;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, .4);
+            border-radius: 15rem;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .menu-principal ul li a:hover {
+            background-color: rgb(112, 76, 33);
+        }
+
+        #orderNow:hover {
+            background-color: transparent;
+            border: 1px solid rgba(255, 255, 255, .4);
+        }
+
+        #contactUs:hover {
+            background-color: rgb(58, 40, 17);
+            border: none;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="menu-principal">
+        <nav>
+            <div>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Profile</a></li>
+                </ul>
+            </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1>The Best Coffe</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo itaque reprehenderit incidunt provident<br> qui blanditiis expedita. Error incidunt eaque eligendi voluptatem earum alias<br> omnis minima suscipit.<br> Sint magnam repudiandae itaque! Lorem ipsum dolor sit amet, consectetur adipisicing <br> Dolor dolorem quam, eum esse, dolorum molestias, neque <br> cum possimus corrupti aliquam sit facilis porro tempora laborum obcaecati! Velit dolorum fuga nostrum.</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <a id="orderNow" href="#">Order now ➜</a>
+        <a id="contactUs" href="#">Contact Us</a>
+    </div>
+    
+</body>
+</html>

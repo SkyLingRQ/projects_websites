@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #eeeeee;
+            display: flex;
+            justify-content: center;
+        }
+
+        .form-container {
+            background-color: rgb(255, 255, 255);
+            padding: 5rem 5rem 5rem 5rem;
+            position: relative;
+            border-radius: 2rem;
+            margin-top: 8%;
+            box-shadow: 0 0 0.7rem rgb(34, 34, 34);
+
+        }
+
+        form > input {
+            display: flex;
+            padding: 1rem 2.5rem 1rem 4rem;
+            margin: 1rem;
+            border-radius: 15rem;
+            outline: none;
+            border: 1px #333 solid;
+        }
+
+        form > i {
+            color: white;
+            padding: 0.7rem;
+            border-radius: 50%;
+            background: linear-gradient(90deg, rgba(153,26,123,1), rgb(223, 22, 176));
+            position: absolute;
+            transform: translateY(-3.8rem);
+            left: 23%;
+        }
+
+        form > input:focus{
+            outline: none;
+        }
+        
+        form > button {
+            padding: 1rem;
+            background: linear-gradient(90deg, rgba(153,26,123,1), rgb(223, 22, 176));
+            border-radius: 2rem;
+            width: 50%;
+            margin-left: 5rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        form > a {
+            text-decoration: none;
+            color: rgb(20, 68, 227);
+            margin-left: 1rem;
+        }
+
+        form > a:hover{
+            text-decoration: underline;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="form-container">
+        <form action="">
+            <h1>Welcome Polola!!</h1>
+            <input type="text" name="inputUsername" id="inputUsername" placeholder="Nombre de perfil" required>
+            <i class="fa fa-user"></i>
+            <input type="password" name="inputPassword" id="inputPassword" placeholder="Contraseña" required>
+            <i class="fa fa-lock"></i>
+            <br>
+            <button>Login</button>
+            <br>
+            <br>
+            <br>
+            <a href="#">Don't you have an account? Register.</a>
+        </form>
+    </div>
+    
+</body>
+</html>

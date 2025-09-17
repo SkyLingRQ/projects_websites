@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffe | Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+            background-image: url("images/bg-login-register.jpeg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            font-family: "Lobster Two", sans-serif;
+        }
+
+        .containerForm {
+            margin-top: 10%;
+            padding: 3rem 5rem 5rem 5rem;
+            background-color: transparent;
+            position: relative;
+            border-radius: 0.5rem;
+            border: 2px solid rgba(255, 255, 255, .4);
+            backdrop-filter: blur(0.3rem);
+        }
+
+
+        form > input {
+            display: flex;
+            padding: 0.8rem;
+            width: 20rem;
+            border-radius: 1rem;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            border: 2px solid rgba(255, 255, 255, .2);
+        }
+
+        form > h1 {
+            text-align: center;
+            color: white;
+        }
+
+        form > i {
+            color: rgb(255, 255, 255);
+            position: absolute;
+            transform: translate(17.6rem, -2rem);
+
+        }
+
+        .iconEye {
+            cursor: pointer;
+        }
+
+        form > button {
+            font-family: "Lobster Two", sans-serif;
+            color: white;
+            cursor: pointer;
+            background-color: #63452c;
+            border-radius: 1rem;
+            border: none;
+            padding: 0.7rem;
+            margin-left: 4.5rem;
+            font-size: large;
+            width: 10rem;
+            transition: background-color 0.3s ease;
+        }
+
+        form > button:hover {
+            background-color: #967138;
+        }
+
+        form > a {
+            text-decoration: none;
+            color: #D6B98C;
+            font-size: 1.3rem;
+            margin-left: 3rem;
+        }
+
+        form > a:hover{
+            color: #8a714b;
+            text-decoration: underline;
+        }
+
+
+
+
+    </style>
+
+
+</head>
+<body>
+    <div class="containerForm">
+        <form action="">
+            <h1>Registrarse</h1>
+            <br>
+            <input type="text" name="username" id="username" placeholder="Nombre de usuario" required>
+            <i class="fa fa-user"></i>
+            <br>
+            <input type="email" name="email" id="email" placeholder="Email Address" required>
+            <i class="fa fa-envelope"></i>
+            <br>
+            <input type="password" name="password" id="password" placeholder="Contraseña" required>
+            <i class="fa fa-eye iconEye"></i>
+            <br>
+            <input type="password" name="repeatPassword" id="repeatPassword" placeholder="Repita la contraseña" required>
+            <i class="fa fa-eye iconEye"></i>
+            <br>
+            <button type="submit">Registrarse</button>
+            <br>
+            <br>
+            <a href="#">You have an account? Login</a>
+        </form>
+    </div>
+    
+
+    <script>
+        const expresiones = {
+	        usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+	        nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+	        password: /^.{4,12}$/, // 4 a 12 digitos.
+	        correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+        }
+
+        const iconEye = document.querySelectorAll(".iconEye");
+        const passwordInput = document.querySelector("#password");
+        const passwordRepeat = document.querySelector("#repeatPassword");
+        const inputs = document.querySelectorAll("form input");
+        let badInput = "1px solid red";
+        let successInput = "1px solid green";
+
+const validar = (e) => {
+    switch (e.target.name) {
+        case "username":
+            inputs[0].style.border = expresiones.usuario.test(e.target.value) ? successInput : badInput;
+            break;
+        case "email":
+            inputs[1].style.border = expresiones.correo.test(e.target.value) ? successInput : badInput;
+            break;
+        case "password":
+            inputs[2].style.border = expresiones.password.test(e.target.value) ? successInput : badInput;
+            break;
+        case "repeatPassword":
+            inputs[3].style.border = (e.target.value === passwordInput.value && expresiones.password.test(e.target.value)) ? successInput : badInput;
+            break;
+        }
+    }
+
+        inputs.forEach((input) => {
+            input.addEventListener("keyup", validar);
+            input.addEventListener("blur", validar);
+        })
+
+
+
+
+
+        iconEye.forEach((icono, index) => {
+            icono.addEventListener("click", () => {
+                if (index == 0){
+                    if (icono.classList.contains("fa-eye")){
+                        icono.classList.replace("fa-eye", "fa-eye-slash");
+                        passwordInput.type = "text";
+                    }
+                    else{
+                        icono.classList.replace("fa-eye-slash", "fa-eye");
+                        passwordInput.type = "password";
+                    }
+                }
+                else if(index == 1){
+                    if(icono.classList.contains("fa-eye")){
+                        icono.classList.replace("fa-eye", "fa-eye-slash");
+                        passwordRepeat.type = "text";
+                    }
+                    else{
+                        icono.classList.replace("fa-eye-slash", "fa-eye");
+                        passwordRepeat.type = "password";
+                    }
+                }
+            })
+        });
+
+    </script>
+
+
+
+</body>
+</html>
